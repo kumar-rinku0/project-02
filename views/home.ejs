@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('./partials/head') %>
+    <title>homepage</title>
+  </head>
+  <body>
+    <%- include('./partials/nav') %>
+    <div class="container d-flex gap-3 mt-3 mb-3">
+      <% if (locals.blogs) { %> <%blogs.forEach((blog) => { %>
+      <div
+        class="card border-0 shadow p-3 mb-5 bg-white rounded"
+        style="width: 18rem"
+      >
+        <img src="<%= blog.imageURL %>" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title"><%= blog.title %></h5>
+          <p class="card-text"><%= blog.body %></p>
+          <a href="/" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+      <% }) %> <% } %>
+    </div>
+    <%-include('./partials/scripts') %>
+  </body>
+</html>
