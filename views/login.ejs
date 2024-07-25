@@ -1,41 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <%- include('./partials/head') %>
+
+<head>
+  <%- include('./partials/head') %>
     <title>Sign IN</title>
-  </head>
-  <body>
-    <%- include('./partials/nav') %>
+</head>
+
+<body>
+  <%- include('./partials/nav') %>
     <h2>Login</h2>
     <div class="container-fluid mt-3 mb-3">
       <form action="/user/login" method="post">
         <div class="mb-3">
           <label for="email" class="form-label">Email address</label>
-          <input
-            type="email"
-            name="email"
-            class="form-control mb-3"
-            id="email"
-            aria-describedby="emailHelp"
-          />
+          <input type="email" name="email" class="form-control mb-3" id="email" aria-describedby="emailHelp" />
           <div id="emailHelp" class="form-text">
             We'll never share your email with anyone else.
           </div>
         </div>
         <div class="mb-3">
           <label for="password" class="form-label">Password</label>
-          <input
-            type="password"
-            class="form-control"
-            id="password"
-            name="password"
-          />
+          <input type="password" class="form-control" id="password" name="password" />
         </div>
         <div class="mb-3 form-check">
           <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-          <label class="form-check-label" for="exampleCheck1"
-            >remember password</label
-          >
+          <label class="form-check-label" for="exampleCheck1">remember password</label>
         </div>
 
         <button type="submit" class="btn btn-primary mb-3">Submit</button>
@@ -43,5 +32,6 @@
     </div>
 
     <%- include('./partials/scripts') %>
-  </body>
+</body>
+
 </html>
