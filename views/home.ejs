@@ -3,7 +3,7 @@
 
 <head>
   <%- include("./partials/head") %>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
     <title>homepage</title>
 </head>
 
@@ -12,16 +12,16 @@
     <div class="container d-flex justify-content-center flex-wrap gap-4">
       <% if (locals.blogs) { %>
         <%blogs.forEach((blog)=> { %>
-          <div class="card border-0 shadow p-3 mb-5 bg-white rounded" style="width: 18rem">
-            <img src="<%= blog.imageURL %>" class="card-img-top" alt="..." />
+          <div class="card border-0 shadow p-3 mb-5 bg-white rounded" style="width: 20rem;">
+            <img src="<%= blog.imageURL %>" class="card-img-top" alt="..." height="200" />
             <div class="card-body">
               <h5 class="card-title">
                 <%= blog.title %>
               </h5>
               <p class="card-text">
-                <%= blog.body %>
+                <%= blog.body.length>= 50 ? blog.body.substring(0, 50)+"..." : blog.body %>
               </p>
-              <a href="/blog/<%= blog._id %>" class="btn btn-primary">Go somewhere</a>
+              <a href="/blog/<%= blog._id %>" class="btn btn-primary">see post!</a>
             </div>
           </div>
           <% }) %>
