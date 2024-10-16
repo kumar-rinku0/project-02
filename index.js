@@ -15,9 +15,11 @@ const app = express();
 const PORT = process.env.PORT;
 const MONGO_URI = process.env.MONGO_URI;
 
+//MONGO_URI _> "mongodb+srv://<USERNAME>:<PASSWORD>@alpha.9j5kqi2.mongodb.net/project-04?retryWrites=true&w=majority&appName=alpha"
+
 // connection
 (function connect() {
-  console.log("trying to connected with database!!");
+  console.log("trying to connect... with database!!");
   mongoose
     .connect(MONGO_URI)
     .then((res) => {
@@ -28,11 +30,11 @@ const MONGO_URI = process.env.MONGO_URI;
 
 // views
 app.set("view engine", "ejs");
-app.set("views", path.resolve("./views"));
+app.set("views", path.join(__dirname, "/views"));
 
 // middlewares
 app.use(express.urlencoded({ extended: false }));
-app.use(express.static(path.resolve("./public")));
+app.use(express.static(path.join(__dirname, "/public")));
 app.use(cookieParser());
 app.use(userAuth);
 

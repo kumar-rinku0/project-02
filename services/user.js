@@ -1,6 +1,8 @@
 const jwt = require("jsonwebtoken");
 
-const key = "this&is*key!";
+const key = process.env.KEY;
+// KEY = "this&is*key!"
+
 const setUser = (user) => {
   return jwt.sign(
     {
