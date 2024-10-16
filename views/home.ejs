@@ -22,7 +22,10 @@
                 <%= blog.content.length>= 50 ? blog.content.substring(0, 50)+"..." : blog.content %>
               </p>
               <button id="likes">
-                &hearts; <%= blog.likes===0 ? "" : blog.likes %>
+                &hearts;
+                <span>
+                  <%= blog.likes===0 ? "" : blog.likes %>
+                </span>
               </button>
               <a href="/blog/<%= blog._id %>" class="btn btn-primary">see post!</a>
             </div>

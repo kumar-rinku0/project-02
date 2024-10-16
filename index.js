@@ -30,6 +30,7 @@ const MONGO_URI = process.env.MONGO_URI;
 
 // middlewares
 app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 app.use(express.static("public"));
 app.use(cookieParser());
 app.use(userAuth);
@@ -44,5 +45,5 @@ app.use("/user", userRouter);
 app.use("/blogs", restrictUser(["ADMIN", "NORMAL"]), blogRouter);
 
 app.listen(PORT, () => {
-  console.log("listening on PORT : 8000");
+  console.log(`listening on PORT: ${PORT}`);
 });
