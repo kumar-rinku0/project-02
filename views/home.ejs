@@ -3,12 +3,13 @@
 
 <head>
   <%- include("./partials/head") %>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     <title>homepage</title>
 </head>
 
 <body>
   <%- include('./partials/nav') %>
-    <div class="container d-flex gap-3 mt-3 mb-3">
+    <div class="container d-flex justify-content-center flex-wrap gap-4">
       <% if (locals.blogs) { %>
         <%blogs.forEach((blog)=> { %>
           <div class="card border-0 shadow p-3 mb-5 bg-white rounded" style="width: 18rem">
@@ -20,7 +21,7 @@
               <p class="card-text">
                 <%= blog.body %>
               </p>
-              <a href="/" class="btn btn-primary">Go somewhere</a>
+              <a href="/blog/<%= blog._id %>" class="btn btn-primary">Go somewhere</a>
             </div>
           </div>
           <% }) %>

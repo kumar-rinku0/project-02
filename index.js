@@ -41,7 +41,7 @@ app.use(userAuth);
 // routes
 app.use("/", staticRouter);
 app.use("/user", userRouter);
-app.use("/blog", restrictUser(["ADMIN", "NORMAL"]), blogRouter);
+app.use("/blogs", restrictUser(["ADMIN", "NORMAL"]), blogRouter);
 
 app.listen(PORT, () => {
   console.log("listening on PORT : 8000");

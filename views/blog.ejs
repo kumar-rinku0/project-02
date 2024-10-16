@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include("./partials/head") %>
+    <title>
+      <% if(locals.blog) { %>
+        blog: <%= blog.title %>
+          <% } else { %>
+            blog not found.
+            <% } %>
+    </title>
+</head>
+
+<body>
+  <%- include('./partials/nav') %>
+    <div>
+      <% if (locals.blog) { %>
+        <br>
+        <br>
+        <h2>
+          <%= blog.title %>
+        </h2>
+        <br>
+        <img src="<%= blog.imageURL %>" alt="img" height="200" />
+        <br>
+        <br>
+        <p>
+          <%= blog.body %>
+        </p>
+        <% } %>
+    </div>
+    <%- include("./partials/scripts") %>
+</body>
+
+</html>

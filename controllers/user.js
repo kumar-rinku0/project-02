@@ -13,7 +13,7 @@ const handlesignUP = async (req, res) => {
 
     return res.redirect("/login");
   } catch (err) {
-    console.log(err);
+    console.log("USER_CONTROLLER", err);
   }
 };
 const handleLogin = async (req, res) => {
@@ -27,7 +27,7 @@ const handleLogin = async (req, res) => {
     res.cookie("token", token);
     return res.redirect("/");
   } catch (err) {
-    console.log(err);
+    console.log("USER_CONTROLLER", err);
   }
 };
 

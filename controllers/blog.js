@@ -2,7 +2,7 @@ const Blog = require("../models/blog");
 
 const hanleBlogUploads = async (req, res) => {
   const { title, body } = req.body;
-  const bolg = await Blog.create({
+  const blog = await Blog.create({
     title: title,
     body: body,
     imageURL: `/uploads/${req.file.filename}`,
