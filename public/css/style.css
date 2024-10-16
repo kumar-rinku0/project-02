@@ -1,0 +1,10 @@
+#likes {
+  color: red;
+  width: 3rem;
+  height: 3rem;
+  font-size: xx-large;
+  border: none;
+  outline: none;
+  background: transparent;
+  display: block;
+}

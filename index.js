@@ -28,15 +28,15 @@ const MONGO_URI = process.env.MONGO_URI;
     .catch((err) => console.log(err));
 })();
 
-// views
-app.set("view engine", "ejs");
-app.set("views", path.join(__dirname, "/views"));
-
 // middlewares
 app.use(express.urlencoded({ extended: false }));
-app.use(express.static(path.join(__dirname, "/public")));
+app.use(express.static("public"));
 app.use(cookieParser());
 app.use(userAuth);
+
+// views
+app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "views"));
 
 // routes
 app.use("/", staticRouter);

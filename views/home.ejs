@@ -3,8 +3,8 @@
 
 <head>
   <%- include("./partials/head") %>
-    <link rel="stylesheet" type="text/css" href="style.css">
     <title>homepage</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
 </head>
 
 <body>
@@ -19,8 +19,11 @@
                 <%= blog.title %>
               </h5>
               <p class="card-text">
-                <%= blog.body.length>= 50 ? blog.body.substring(0, 50)+"..." : blog.body %>
+                <%= blog.content.length>= 50 ? blog.content.substring(0, 50)+"..." : blog.content %>
               </p>
+              <button id="likes">
+                &hearts; <%= blog.likes===0 ? "" : blog.likes %>
+              </button>
               <a href="/blog/<%= blog._id %>" class="btn btn-primary">see post!</a>
             </div>
           </div>
@@ -28,6 +31,7 @@
             <% } %>
     </div>
     <%- include("./partials/scripts") %>
+      <script src="js/script.js"></script>
 </body>
 
 </html>

@@ -6,11 +6,18 @@ const blogSchema = new Schema(
       type: String,
       required: true,
     },
-    body: {
+    content: {
       type: String,
+    },
+    likes: {
+      type: Number,
+    },
+    comments: {
+      type: Number,
     },
     imageURL: {
       type: String,
+      required: true,
     },
     createdBy: {
       type: Schema.Types.ObjectId,

@@ -4,7 +4,9 @@ const hanleBlogUploads = async (req, res) => {
   const { title, body } = req.body;
   const blog = await Blog.create({
     title: title,
-    body: body,
+    content: body,
+    likes: 0,
+    comments: 0,
     imageURL: `/uploads/${req.file.filename}`,
     createdBy: req.user._id,
   });
